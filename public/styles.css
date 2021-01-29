@@ -1,27 +1,201 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("assets/Montserrat-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("assets/Montserrat-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+:root {
+  --ta-blue: rgb(60, 78, 224);
+  --ta-blue-hover: rgba(60, 78, 224, 0.8);
+  --ta-white: #fefefa;
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Montserrat';
+}
+
+body {
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: var(--ta-white)
 }
 
 header {
   position: fixed;
   width: 100vw;
   height: 85px;
-  background-color: rgb(60, 78, 224);
+  background-color: var(--ta-blue);
   z-index: 998;
   top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 header img {
   z-index: 999;
   height: 50px;
-  height: 32px; 
-  margin-top: 26.5px; 
+  height: 32px;  
   margin-left: 3rem;
+  margin-top: -5px; /* image is not perfectly centered */
+}
+
+header div {
+  font-size: 1.5em;
+  color: white;
+  margin-right: 3rem;
+  font-weight: 500;
 }
 
 main {
+  width: 70vw;
+  margin: 1em auto;
   margin-top: 85px; 
-  background-color: fefefa;
+  position: relative;
+}
+
+.userInputs {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 2em auto;
+  margin-top: calc(85px + 2em);
+  width: 50vw;
+  min-width: 800px;
+}
+
+.buttonGroup, .nameGroup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 260px;
+}
+
+.buttonGroup button {
+  width: 30px;
+  height: 30px;
+  background-color: var(--ta-blue);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.buttonGroup button:hover {
+  background-color: var(--ta-blue-hover);
+}
+
+.nameGroup button {
+  height: 30px;
+  padding: 0 1em;
+  background-color: var(--ta-blue);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.nameGroup input {
+  height: 30px;
+  font-size: 1em;
+  margin: 0.5em;
+}
+
+.nameGroup button:hover {
+  background-color: var(--ta-blue-hover);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2em;
+}
+
+.table {
+  margin-top: 1em;
+}
+
+.table li {
+  list-style: none;
+  width: 70vw;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 600px) {
+  header {
+    position: fixed;
+    width: 100vw;
+    height: 85px;
+    background-color: var(--ta-blue);
+    z-index: 998;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  header img {
+    width: 70vw;
+    max-width: 400px;
+    margin-left: 0;
+  }
+
+  header div {
+    display: none;
+  }
+
+  main {
+    width: 90vw;
+    margin: 1em auto;
+    margin-top: 85px; 
+    position: relative;
+  }
+
+  .userInputs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 2em auto;
+    margin-top: calc(85px + 2em);
+    width: 100%;
+  }
+
+  .userInputs {
+    all: revert;
+
+    display: flex;
+    flex-direction: column;
+    margin: 1em auto;
+    margin-top: calc(85px + 1em);
+  }
+
+  .userInputs button {
+    color: white;
+    -webkit-text-fill-color: rgba(255, 255, 255, 1)
+  }
+
+  .nameGroup {
+    margin-bottom: 1.5em;
+  }
+
+  .buttonGroup > button:first-of-type {
+    margin-left: 5em;
+  }
+
+  .table li {
+    width: 100vw;
+  }
 }

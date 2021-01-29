@@ -10,9 +10,34 @@
 <body>
   <header className="App-header">
     <img src="assets/logo.png" alt="TechAcademy" />
+    <div>
+      Name: 
+      <span id="nameNav">?<span>
+    </div>
   </header>
   <main>
-    Content will go here!
+    <div class="userInputs">
+      <div class="nameGroup">
+        <span>Name:</span>
+        <input type="text" placeholder="Enter your name here!" />
+        <button>Save</button>
+      </div>
+      <div class="buttonGroup">
+        <span>Hours Coded so far:</span>
+        <button>-</button>
+        <span>0</span>
+        <button>+</button>
+      </div>
+    </div>
+    <div class="content">
+      <h3>Team Ranking</h3>
+      <ul class="table">
+        <li>
+          <span>Name</span>
+          <span>Hours</span>
+        </li>
+      </ul>
+    </div>
   </main>
   <script src="script.js"></script>
 </body>
