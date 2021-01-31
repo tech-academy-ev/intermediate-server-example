@@ -27,7 +27,7 @@
 
 body {
   min-width: 100vw;
-  min-height: 100vh;
+  min-height: calc(100vh - 85px - 3em);
   background-color: var(--ta-white)
 }
 
@@ -130,6 +130,26 @@ main {
   width: 70vw;
   display: flex;
   justify-content: space-evenly;
+  margin-top: 0.5em;
+}
+
+.table li:first-of-type span {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.table li .name, .table li .hours {
+  min-width: 150px;
+  text-align: center;
+}
+
+.notification {
+  padding: 1em 2em;
+  background-color: var(--ta-blue);
+  color: white;
+  position: fixed;
+  bottom: 2.5em;
+  left: 2.5em;
 }
 
 @media only screen and (max-width: 600px) {
@@ -198,4 +218,5 @@ main {
   .table li {
     width: 100vw;
   }
+
 }
