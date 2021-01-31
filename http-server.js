@@ -4,6 +4,29 @@
 var http = require('http');
 var fs = require('fs');
 
+var DATA = [
+  {
+    name: 'Lukas',
+    hours: 150,
+  },
+  {
+    name: 'Lara',
+    hours: 120,
+  },
+  {
+    name: 'Tom',
+    hours: 115,
+  },
+  {
+    name: 'Marc',
+    hours: 7,
+  },
+  {
+    name: 'Anne',
+    hours: 22,
+  },
+];
+
 // still the same as last time, we make the server 
 var server = http.createServer(function (req, res) {
 
@@ -135,6 +158,14 @@ var server = http.createServer(function (req, res) {
           
         res.end();
       });
+
+    } else if (req.url === "/data") {
+
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.write(JSON.stringify(DATA));
+        
+      res.end();
+
     } else {
 
       // so if none of the paths can be matched, we need a defualt case
